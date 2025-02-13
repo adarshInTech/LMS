@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+@import "tailwindcss";
+
+* {
+  font-family: Outfit, sans-serif;
+}
+/* styles.css */
+:root {
+  --course-details-heading-small: 10px;
+  --course-details-heading-large: 44px;
+  --home-heading-large: 56px; /* Custom size for large heading */
+  --home-heading-small: 34px; /* Custom size for small heading */
+  --default: 21px; /* Default size */
+  --auto: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.text-home-heading-large {
+  font-size: var(--home-heading-large);
+}
+
+.text-home-heading-small {
+  font-size: var(--home-heading-small);
+}
+
+.grid-cols-auto {
+  grid-template-columns: var(--auto);
+}
+@media (min-width: 768px) {
+  :root {
+    --home-heading-small: 28px; /* Adjust small font size for larger screens */
+    --home-heading-large: 40px; /* Adjust large font size for larger screens */
+  }
+}
