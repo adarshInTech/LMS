@@ -11,10 +11,46 @@ const Footer = () => {
             industry. Lorem Ipsum has been the industry's standard dummy text.
           </p>
         </div>
-        <div>
-          <h2>Company</h2>
+        <div className="flex flex-col md:items-start items-center w-full ">
+          <h2 className="font-semibold text-white mb-5">Company</h2>
+          <ul className="flex md:flex-col w-full justify-between text-sm text-white/80 md:space-y-2">
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">About us</a>
+            </li>
+            <li>
+              <a href="#">Contact us</a>
+            </li>
+            <li>
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ul>
         </div>
-        <div></div>
+        <div className="hidden md:flex flex-col items_start w-full">
+          <h2 className="font-semibold text-white mb-5">
+            Subscribe to our newsletter
+          </h2>
+          <p className="text-sm text-white/80">
+            The latest news, articles , and resources ,sent to your inbox weekly
+          </p>
+          <div className="flex flex-row gap-4 mt-5">
+            <input
+              className="bg-[#1F2937] placeholder-gray-500 border border-gray-500/30 p-2 text-gray-500"
+              type="email"
+              placeholder="Enter your email"
+              flex
+              flex-col
+              md:items-start
+              items-center
+              w-full
+            />
+            <button className="text-white bg-blue-700 p-2 rounded-lg ">
+              Subscribe
+            </button>
+          </div>
+        </div>
       </div>
 
       <p className="py-4 text-center text-xs md:text-sm text-white/60">

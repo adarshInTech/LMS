@@ -13,8 +13,17 @@
   --home-heading-small: 34px; /* Custom size for small heading */
   --default: 21px; /* Default size */
   --auto: repeat(auto-fit, minmax(200px, 1fr));
+  --section-height: 500px;
+  --maxWidth: 424px;
+  --boxShadow: 0px 4px 15px 2px rgba(0, 0, 0, 0.1);
 }
 
+.max-w-course-card {
+  max-width: var(--maxWidth);
+}
+.shadow-custom-card {
+  box-shadow: var(--boxShadow);
+}
 .text-home-heading-large {
   font-size: var(--home-heading-large);
 }
@@ -23,12 +32,95 @@
   font-size: var(--home-heading-small);
 }
 
+.text-course-details-heading-small {
+  font-size: var(--course-details-heading-small);
+}
+
+.text-course-details-heading-large {
+  font-size: var(--course-details-heading-large);
+}
 .grid-cols-auto {
   grid-template-columns: var(--auto);
 }
-@media (min-width: 768px) {
-  :root {
-    --home-heading-small: 28px; /* Adjust small font size for larger screens */
-    --home-heading-large: 40px; /* Adjust large font size for larger screens */
+.h-section-height {
+  height: var(--section-height);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.rich-text {
+  font-size: 15px;
+  color: #7a7b7d;
+}
+
+.rich-text p {
+  margin-bottom: 16px;
+}
+
+.rich-text h1 {
+  font-size: 36px;
+  font-weight: 800;
+  color: #252525;
+  margin: 32px 0;
+}
+
+.rich-text h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #252525;
+  margin: 24px 0;
+}
+
+.rich-text h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333333;
+  margin: 20px 0;
+}
+
+.rich-text h4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #444444;
+  margin: 16px 0;
+}
+
+.rich-text h5 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #555555;
+  margin: 12px 0;
+}
+
+.rich-text h6 {
+  font-size: 12px;
+  font-weight: 400;
+  color: #666666;
+  margin: 8px 0;
+}
+
+.rich-text strong {
+  font-weight: 700;
+}
+
+.rich-text ol {
+  margin-left: 30px;
+  list-style-type: decimal;
+}
+
+.rich-text ul {
+  margin-left: 30px;
+  list-style-type: disc;
+}
+
+.rich-text li {
+  margin-bottom: 8px;
 }

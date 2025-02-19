@@ -14,7 +14,7 @@ const Navbar = () => {
   const { navigate } = useContext(AppContext);
   return (
     <div
-      className={`flex items-center justify-between px-4 sm:px-10 md:px-14 lg:px-36 border-b border-gray-500 py-4 ${
+      className={`flex items-center justify-between sm:px-10  px-4 md:px-14 lg:px-36 border-b border-gray-500 py-4 ${
         isCourseListPage ? "bg-white" : "bg-cyan-100/70"
       }`}
     >
