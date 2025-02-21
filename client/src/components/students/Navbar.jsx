@@ -28,7 +28,8 @@ const Navbar = () => {
         <div className="flex items-center gap-5">
           {user && (
             <>
-              <button>Become Educator</button>
+              <Link to="/educator">Become Educator</Link>
+
               <Link to="/my-enrollments">My Enrollments</Link>
             </>
           )}

@@ -1,9 +1,12 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../../context/AppContext";
 import { Line } from "rc-progress";
+import Footer from "../../components/students/Footer";
+import { useNavigate } from "react-router-dom";
 
 const MyEnrollments = () => {
   const { enrolledCourses, calculateCourseDuration } = useContext(AppContext);
+  const navigate = useNavigate();
   const [progressArray, setProgressArray] = useState([
     {
       lectureCompleted: 2,
@@ -81,10 +84,12 @@ const MyEnrollments = () => {
                     <p className="mb-1 max-sm:text-sm">{course.courseTitle}</p>
                     <Line
                       strokeWidth={2}
-                      trailWidth={2}
-                      percent={50}
-                      strokeLinecap="butt"
-                      className="bg-gray-500 "
+                      percent={
+                        progressArray[index]
+                          ? (progressArray[index].lectureCompleted * 100) /
+                            progressArray[index].totalLectures
+                          : 0
+                      }
                     />
                   </div>
                 </td>
@@ -103,7 +108,10 @@ const MyEnrollments = () => {
                 </td>
 
                 <td className="px-4 py-3 max-sm:text-right">
-                  <button className="px-3 sm:px-5 py-1.5 sm:py-2 bg-blue-600 max-sm:text-xs text-white">
+                  <button
+                    onClick={() => navigate("/player/" + course._id)}
+                    className="px-3 sm:px-5 py-1.5 sm:py-2 bg-blue-600 max-sm:text-xs text-white"
+                  >
                     {" "}
                     On Going
                   </button>
@@ -113,6 +121,7 @@ const MyEnrollments = () => {
           </tbody>
         </table>
       </div>
+      <Footer />
     </>
   );
 };
